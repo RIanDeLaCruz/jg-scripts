@@ -157,3 +157,95 @@ let inflation = new Chart(document.querySelector('#inflation'), {
   }
 })
 
+
+
+let tourist = new Chart(document.querySelector('#tourist'), {
+  plugins: [ChartDataLabels],
+  type: 'bar',
+  data: {
+    labels: [2019, 2020, 2021, 2022, 2023],
+    datasets: [
+      {
+        data: [482.15, 82.24, 8.49, 214.58, 482.54],
+        label: 'Tourist Receipts in the PH',
+        type: 'line',
+        backgroundColor: '#2DA574',
+        borderColor: '#2DA574',
+        yAxisID: 'y1',
+        datalabels: {
+          display: false
+        },
+        pointStyle: 'circle'
+      },
+      {
+        data: [ 8.26, 1.48, 0.16, 2.03, 5.45 ],
+        label: 'Tourist Arrivals in the PH',
+        backgroundColor: [
+          '#2C64CF',
+          '#2C64CF',
+          '#2C64CF',
+          '#2C64CF',
+          '#08358D'
+        ],
+        borderColor: '#2C64CF',
+        borderRadius: 8,
+        yAxisID: 'y'
+      }
+    ],
+  },
+  options: {
+    interaction: {
+      mode: 'index',
+      intersect: false
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false
+        },
+        stacked: true
+      },
+      y: {
+        beginAtZero: true,
+        max: 10
+      },
+      y1: {
+        type: 'linear',
+        display: true,
+        position: 'right'
+      }
+    },
+    plugins: {
+      tooltip: {
+        titleColor: '#737B8E',
+        titleFont: {
+          size: 14,
+          weight: 400
+        },
+        bodyFont: {
+          size: 16
+        },
+        usePointStyle: true,
+      },
+      legend: {
+        onClick: null,
+        labels: {
+          filter: item => item.text,
+          usePointStyle: true,
+          boxWidth: 6
+        }
+      },
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+        font: {
+          weight: 'bold',
+          size: 14
+        },
+        formatter: function (value, context) {
+            return value; // Display the actual data value
+        },
+      }
+    }
+  }
+})
