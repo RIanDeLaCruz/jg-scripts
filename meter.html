@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meter</title>
+    <style>
+    .meter {
+      background: #E6EAEC;
+      border-radius: 8px;
+      width: 322px;
+      height: 48px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .inner {
+      box-sizing: border-box;
+      width: 55.9%;
+      height: 100%;
+      background: red;
+      border-radius: 8px 0 0 8px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      animation: grow 1s;
+      transform-origin: top left;
+    }
+
+    @keyframes grow {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+    .meter p {
+      position: absolute;
+      left: 8px;
+      top: 12px;
+      margin: 0;
+      color: #E6EAEC;
+      font-family: sans-serif;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="meter">
+      <div class="inner"></div>
+      <p>55.9% <span>STAKES</span></p>
+    </div>
+  </body>
+</html>
