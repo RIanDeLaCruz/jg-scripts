@@ -178,6 +178,8 @@ let fyRevenue = new Chart(document.querySelector('#fyr'), {
   }
 })
 
+let delayed = null
+
 let coreNI = new Chart(document.querySelector('#coreNI'), {
   plugins: [ChartDataLabels, coreLabel],
   type: 'bar',
@@ -249,6 +251,18 @@ let coreNI = new Chart(document.querySelector('#coreNI'), {
     ],
   },
   options: {
+    animation: {
+      onComplete: () => {
+        delayed = true;
+      },
+      delay: (context) => {
+        let delay = 0;
+        if (context.type === 'data' && context.mode === 'default' && !delayed) {
+          delay = context.dataIndex * 300 + context.datasetIndex * 100;
+        }
+        return delay;
+      },
+    },
     scales: {
       x: {
         grid: {
@@ -349,4 +363,157 @@ let cashDividends = new Chart(document.querySelector('#cashDividends'), {
       }
     }
   }
-});
+})
+
+let assets = new Chart(document.querySelector('#assets'), {
+  plugins: [ChartDataLabels],
+  type: 'bar',
+  data: {
+    labels: yearLabels,
+    datasets: [{
+      label: 'Total Assets (in Php billion)',
+      data: [ 928, 1000, 1024, 1073, 1113 ],
+      backgroundColor: [
+        '#C7BB24',
+        '#C7BB24',
+        '#C7BB24',
+        '#C7BB24',
+        '#39394D'
+      ],
+      borderRadius: 8
+    }]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        }
+      },
+      y: {
+        beginAtZero: true
+      }
+    },
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false
+      },
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+        offset: 8,
+        color: '#39394D',
+        font: {
+          weight: 'bold',
+          size: 14
+        },
+        formatter: function (value, context) {
+            return value; // Display the actual data value
+        }
+      }
+    }
+  }
+})
+
+let currentRatio = new Chart(document.querySelector('#currentRatio'), {
+  plugins: [ChartDataLabels],
+  type: 'bar',
+  data: {
+    labels: yearLabels,
+    datasets: [{
+      label: 'Total Assets (in Php billion)',
+      data: [ 0.96, 1.02, 1.03, 0.98, 1.01 ],
+      backgroundColor: [
+        '#90C8D8',
+        '#90C8D8',
+        '#90C8D8',
+        '#90C8D8',
+        '#F3FEFC'
+      ],
+      borderRadius: 8
+    }]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        }
+      },
+      y: {
+        beginAtZero: true
+      }
+    },
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false
+      },
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+        offset: 8,
+        color: '#39394D',
+        font: {
+          weight: 'bold',
+          size: 14
+        },
+        formatter: function (value, context) {
+            return value; // Display the actual data value
+        }
+      }
+    }
+  }
+})
+
+let debtRatio = new Chart(document.querySelector('#debtRatio'), {
+  plugins: [ChartDataLabels],
+  type: 'bar',
+  data: {
+    labels: yearLabels,
+    datasets: [{
+      label: 'Total Assets (in Php billion)',
+      data: [ 0.67, 0.78, 0.68, 0.77, 0.68 ],
+      backgroundColor: [
+        '#C7BB24',
+        '#C7BB24',
+        '#C7BB24',
+        '#C7BB24',
+        '#E7E670'
+      ],
+      borderRadius: 8
+    }]
+  },
+  options: {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        }
+      },
+      y: {
+        beginAtZero: true
+      }
+    },
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false
+      },
+      datalabels: {
+        anchor: 'end',
+        align: 'end',
+        offset: 8,
+        color: '#39394D',
+        font: {
+          weight: 'bold',
+          size: 14
+        },
+        formatter: function (value, context) {
+            return value; // Display the actual data value
+        }
+      }
+    }
+  }
+})
