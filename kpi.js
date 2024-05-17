@@ -1,10 +1,12 @@
 let options = {
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
           drawTicks: false,
-          display: false,
-          drawBorder: false
+          display: false
         },
         ticks: {
           padding: -24,
@@ -16,10 +18,12 @@ let options = {
         }
       },
       y: {
+        border: {
+          display: false
+        },
         grid: {
-          display: false,
           drawTicks: false,
-          drawBorder: false
+          display: false
         },
         ticks: {
           display: false
@@ -68,10 +72,12 @@ let urcRevenue = new Chart(document.querySelector('#urcRevenue'), {
   options: {
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
           drawTicks: false,
           display: false,
-          drawBorder: false
         },
         ticks: {
           padding: -24,
@@ -135,10 +141,12 @@ let rlcRevenue = new Chart(document.querySelector('#rlcRevenue'), {
   options: {
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
           drawTicks: false,
           display: false,
-          drawBorder: false
         },
         ticks: {
           padding: -24,
@@ -201,10 +209,12 @@ let cebRevenue = new Chart(document.querySelector('#cebRevenue'), {
   options: {
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
           drawTicks: false,
           display: false,
-          drawBorder: false
         },
         ticks: {
           padding: -24,
@@ -267,10 +277,12 @@ let jgsocRevenue = new Chart(document.querySelector('#jgsocRevenue'), {
   options: {
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
           drawTicks: false,
           display: false,
-          drawBorder: false
         },
         ticks: {
           padding: -24,
@@ -333,10 +345,12 @@ let urcIncome = new Chart(document.querySelector('#urcIncome'), {
   options: {
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
           drawTicks: false,
           display: false,
-          drawBorder: false
         },
         ticks: {
           padding: -24,
@@ -399,10 +413,12 @@ let rlcIncome = new Chart(document.querySelector('#rlcIncome'), {
   options: {
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
           drawTicks: false,
           display: false,
-          drawBorder: false
         },
         ticks: {
           padding: -24,
@@ -465,10 +481,12 @@ let cebIncome = new Chart(document.querySelector('#cebIncome'), {
   options: {
     scales: {
       x: {
+        border: {
+          display: false
+        },
         grid: {
           drawTicks: false,
           display: false,
-          drawBorder: false
         },
         ticks: {
           padding: -24,
@@ -533,7 +551,6 @@ let jgsocIncome = new Chart(document.querySelector('#jgsocIncome'), {
         grid: {
           drawTicks: false,
           display: false,
-          drawBorder: false
         },
         ticks: {
           z: 1,
@@ -552,7 +569,7 @@ let jgsocIncome = new Chart(document.querySelector('#jgsocIncome'), {
         ticks: {
           display: false
         },
-        beginAtZero: true,
+        min: -15
       }
     },
     responsive: true,
@@ -561,9 +578,9 @@ let jgsocIncome = new Chart(document.querySelector('#jgsocIncome'), {
         display: false
       },
       datalabels: {
-        anchor: 'end',
+        anchor: 'start',
         align: 'end',
-        offset: 8,
+        offset: -24,
         color: '#2C64CF',
         font: {
           weight: 'bold',
