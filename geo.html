@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width">
     <title></title>
     <style>
+      @media(max-width: 768px) {
+        .wrapper {
+          height: 800px;
+          width: 100%;
+          overflow: scroll;
+        }
+        .wrapper svg {
+          height: 100%;
+          width: auto;
+        }
+      }
       .tooltip:before {
         width: 12px;
         height: 12px;
@@ -69,6 +80,13 @@
     </style>
   </head>
   <body>
+    <div class="tooltips">
+      <p class="tooltip-title">Thailand</p>
+      <ul class="rows">
+        <li class="row" data-count="2" style="--bg: #BA0001">Universal Robina Corp</li>
+        <li class="row" data-count="2" style='--bg: #EEAF00'>Cebu Air Inc</li>
+      </ul>
+    </div>
     <div class="wrapper">
       <svg width="1442" height="1141" viewBox="0 0 1442 1141" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="1439" height="1138" transform="translate(1 2)" fill="#3C949A"/>
@@ -1014,13 +1032,6 @@
         </defs>
       </svg>
     </div>
-    <div class="tooltip">
-      <p class="tooltip-title">Thailand</p>
-      <ul class="rows">
-        <li class="row" data-count="2" style="--bg: #BA0001">Universal Robina Corp</li>
-        <li class="row" data-count="2" style='--bg: #EEAF00'>Cebu Air Inc</li>
-      </ul>
-    </div>
     <script>
       const config = {
         'ph': {
@@ -1294,9 +1305,15 @@
         const path = event.target; // Get the clicked path element from the event object
         const rect = path.getBoundingClientRect();
         const tooltipdimensions = tooltip.getBoundingClientRect()
-        console.log(tooltipdimensions)
-        tooltip.style.left = `${rect.left + window.pageXOffset + 14}px`;
-        tooltip.style.top = `${rect.top + window.pageYOffset + 14}px`;
+        if(window.matchMedia("(max-width: 768px)").matches) {
+          const svgBox = document.querySelector('svg').getBoundingClientRect()
+          tooltip.style.left = `${window.pageXOffset + 32}px`;
+          tooltip.style.top = `${svgBox.top + document.documentElement.scrollTop +
+              svgBox.height - tooltipdimensions.height - 16}px`;
+        } else {
+          tooltip.style.left = `${rect.left + window.pageXOffset + 14}px`;
+          tooltip.style.top = `${rect.top + window.pageYOffset + 14}px`;
+        }
 
         // Remove the tooltip on click outside
         document.querySelector('svg').addEventListener('click', removeTooltip);
