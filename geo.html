@@ -1036,23 +1036,211 @@
             },
           ]
         },
-        'my': {},
-        'th': {},
-        'br': {},
-        'cn': {},
-        'id': {},
-        'vn': {},
-        'jp': {},
-        'sk': {},
-        'mc': {},
-        'sg': {},
-        'tw': {},
-        'mm': {},
-        'hk': {},
-        'au': {},
-        'ua': {},
-        'la': {},
-        'kh': {},
+        'my': {
+          name: 'Malaysia',
+          data: [
+            {
+              bu: 'CEB',
+              count: 2,
+              color: '#EEAF00'
+            },
+            {
+              bu: 'URC',
+              count: 3,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'th': {
+          name: 'Thailand',
+          data: [
+            {
+              bu: 'CEB',
+              count: 1,
+              color: '#EEAF00'
+            },
+            {
+              bu: 'URC',
+              count: 6,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'br': {
+          name: 'Brunei',
+          data: [
+            {
+              bu: 'CEB',
+              count: 1,
+              color: '#EEAF00'
+            },
+          ]
+        },
+        'cn': {
+          name: 'China',
+          data: [
+            {
+              bu: 'CEB',
+              count: 6,
+              color: '#EEAF00'
+            },
+            {
+              bu: 'URC',
+              count: 2,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'id': {
+          name: 'Indonesia',
+          data: [
+            {
+              bu: 'CEB',
+              count: 2,
+              color: '#EEAF00'
+            },
+            {
+              bu: 'URC',
+              count: 2,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'vn': {
+          name: 'Vietnam',
+          data: [
+            {
+              bu: 'CEB',
+              count: 3,
+              color: '#EEAF00'
+            },
+            {
+              bu: 'URC',
+              count: 4,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'jp': {
+          name: 'Japan',
+          data: [
+            {
+              bu: 'CEB',
+              count: 5,
+              color: '#EEAF00'
+            },
+          ]
+        },
+        'sk': {
+          name: 'South Korea',
+          data: [
+            {
+              bu: 'CEB',
+              count: 2,
+              color: '#EEAF00'
+            },
+          ]
+        },
+        'mc': {
+          name: 'Macau',
+          data: [
+            {
+              bu: 'CEB',
+              count: 1,
+              color: '#EEAF00'
+            },
+          ]
+        },
+        'sg': {
+          name: 'Singapore',
+          data: [
+            {
+              bu: 'CEB',
+              count: 1,
+              color: '#EEAF00'
+            },
+            {
+              bu: 'URC',
+              count: 1,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'tw': {
+          name: 'Taiwan',
+          data: [
+            {
+              bu: 'CEB',
+              count: 1,
+              color: '#EEAF00'
+            },
+          ]
+        },
+        'ua': {
+          name: 'United Arab Emirates',
+          data: [
+            {
+              bu: 'CEB',
+              count: 1,
+              color: '#EEAF00'
+            },
+          ]
+        },
+        'au': {
+          name: 'Australia',
+          data: [
+            {
+              bu: 'CEB',
+              count: 2,
+              color: '#EEAF00'
+            },
+          ]
+        },
+        'hk': {
+          name: 'Hong Kong',
+          data: [
+            {
+              bu: 'CEB',
+              count: 2,
+              color: '#EEAF00'
+            },
+            {
+              bu: 'URC',
+              count: 1,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'mm': {
+          name: 'Myanmar',
+          data: [
+            {
+              bu: 'URC',
+              count: 1,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'la': {
+          name: 'Laos',
+          data: [
+            {
+              bu: 'URC',
+              count: 2,
+              color: '#BA0001'
+            },
+          ]
+        },
+        'kh': {
+          name: 'Cambodia',
+          data: [
+            {
+              bu: 'URC',
+              count: 1,
+              color: '#BA0001'
+            },
+          ]
+        },
       }
 
       function createTooltip(event, code) {
@@ -1085,7 +1273,7 @@
         const tooltipdimensions = tooltip.getBoundingClientRect()
         console.log(tooltipdimensions)
         tooltip.style.left = `${rect.left + window.pageXOffset}px`;
-        tooltip.style.top = `${rect.top + window.pageYOffset - 116}px`;
+        tooltip.style.top = `${rect.top + window.pageYOffset}px`;
 
         // Remove the tooltip on click outside
         document.querySelector('svg').addEventListener('click', removeTooltip);
@@ -1096,18 +1284,6 @@
           }
         }
       }
-      const ids = [
-        'id_urc', 'in_ceb', 'au_ceb',
-        'vn_urc', 'vn_ceb', 'jp_ceb',
-        'sk_ceb', 'th_urc', 'th_ceb',
-        'my_urc', 'my_ceb', 'sg_urc',
-        'sg_ceb', 'cn_urc', 'cn_ceb',
-        'mc_ceb', 'hk_urc', 'hk_ceb',
-        'tw_ceb', 'br_ceb', 'ua_ceb',
-        'ph_rlc', 'ph_ceb', 'ph_jgsoc',
-        'ph_jgs', 'ph_urc', 'mm_urc',
-        'la_urc', 'kh_urc'
-      ]
       document.querySelectorAll('.dot').forEach(el => {
         el.addEventListener('click', evt => {
           const message = el.id.split('_')[0]
