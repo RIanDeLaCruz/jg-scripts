@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <style>
+      .tooltip:before {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        content: '';
+        background-color: #F3FEFC;
+        top: -12px;
+        left: -12px;
+        border-radius: 50%;
+      }
       .tooltip {
         position: absolute;
         border-radius: 16px;
@@ -291,8 +301,8 @@
         const rect = path.getBoundingClientRect();
         const tooltipdimensions = tooltip.getBoundingClientRect()
         console.log(tooltipdimensions)
-        tooltip.style.left = `${rect.left + window.pageXOffset}px`;
-        tooltip.style.top = `${rect.top + window.pageYOffset}px`;
+        tooltip.style.left = `${rect.left + window.pageXOffset + 14}px`;
+        tooltip.style.top = `${rect.top + window.pageYOffset + 14}px`;
 
         // Remove the tooltip on click outside
         document.querySelector('svg').addEventListener('click', removeTooltip);
@@ -305,6 +315,9 @@
       }
       document.querySelectorAll('.dot').forEach(el => {
         el.addEventListener('click', evt => {
+          document.querySelectorAll('.tooltip').forEach(el => {
+            document.body.removeChild(el)
+          })
           createTooltip(evt, evt.currentTarget.id)
         })
       })

@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width">
     <title></title>
     <style>
+      .tooltip:before {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        content: '';
+        background-color: #F3FEFC;
+        top: -12px;
+        left: -12px;
+        border-radius: 50%;
+      }
       .tooltip {
         position: absolute;
         border-radius: 16px;
@@ -20,11 +30,17 @@
         text-align: left;
         margin: 0;
       }
-      .tooltip ul {
+      .tooltip ul:not(.nested) {
         font-family: 'Rethink Sans', sans-serif;
         list-style-type: none;
         padding: 0;
         margin: 0;
+      }
+      .tooltip .nested {
+        list-style-type: disc;
+        margin: 0;
+        padding: 8px 16px;
+        max-width: 25ch;
       }
       .tooltip .row {
         min-height: 24px;
@@ -32,7 +48,8 @@
         margin-left: 32px;
         margin-top: 8px;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
       }
       .tooltip .row:before {
         position: absolute;
@@ -1112,7 +1129,8 @@
             {
               bu: 'CEB',
               count: 3,
-              color: '#EEAF00'
+              color: '#EEAF00',
+              text: 'Began flights to Danang'
             },
             {
               bu: 'URC',
@@ -1255,7 +1273,12 @@
         for(let segment of data.data) {
           let row = document.createElement('li')
           row.classList.add('row')
-          row.textContent = segment.bu
+          if(segment.text) {
+            let str = `${segment.bu}<ul class="nested"><li>${segment.text}</li></ul>`
+            row.innerHTML = str
+          } else {
+            row.textContent = segment.bu
+          }
           row.dataset.count = segment.count
           row.setAttribute('style', `--bg: ${segment.color}`)
           rows.appendChild(row)
@@ -1272,8 +1295,8 @@
         const rect = path.getBoundingClientRect();
         const tooltipdimensions = tooltip.getBoundingClientRect()
         console.log(tooltipdimensions)
-        tooltip.style.left = `${rect.left + window.pageXOffset}px`;
-        tooltip.style.top = `${rect.top + window.pageYOffset}px`;
+        tooltip.style.left = `${rect.left + window.pageXOffset + 14}px`;
+        tooltip.style.top = `${rect.top + window.pageYOffset + 14}px`;
 
         // Remove the tooltip on click outside
         document.querySelector('svg').addEventListener('click', removeTooltip);
@@ -1286,6 +1309,9 @@
       }
       document.querySelectorAll('.dot').forEach(el => {
         el.addEventListener('click', evt => {
+          document.querySelectorAll('.tooltip').forEach(el => {
+            document.body.removeChild(el)
+          })
           const message = el.id.split('_')[0]
           createTooltip(evt, message)
         })
