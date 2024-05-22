@@ -1,18 +1,19 @@
+(
 const config = {
   'luz': {
     name: 'Philippines',
     data: [
-      {
-        bu: 'RLC',
-        count: 197,
-        color: '#005FC6',
-        text: "Launched Westin Manila Sonata Hotel, Le Pont, Haraya, Sierra Valley Gardens 4, Springdale Batangas, Calamba 2A, and 1 workable facility in Cyberscape Omega"
-      },
-      {
-        bu: 'URC',
-        count: 34,
-        color: '#BA0001'
-      },
+    {
+      bu: 'RLC',
+      count: 197,
+      color: '#005FC6',
+      text: "Launched Westin Manila Sonata Hotel, Le Pont, Haraya, Sierra Valley Gardens 4, Springdale Batangas, Calamba 2A, and 1 workable facility in Cyberscape Omega"
+    },
+    {
+      bu: 'URC',
+      count: 34,
+      color: '#BA0001'
+    },
       {
         bu: 'CEB',
         count: 12,
@@ -24,27 +25,27 @@ const config = {
         count: 2,
         color: '#008638'
       },
-      {
-        bu: 'JG Summit',
-        count: 1,
-        color: '#1CB0E3'
-      },
+    {
+      bu: 'JG Summit',
+      count: 1,
+      color: '#1CB0E3'
+    },
     ]
   },
   'vis': {
     name: 'Visayas',
     data: [
-      {
-        bu: 'RLC',
-        count: 42,
-        color: '#005FC6',
-        text: 'Launched NuStar Mall and Mantawi Residences'
-      },
-      {
-        bu: 'URC',
-        count: 11,
-        color: '#BA0001'
-      },
+    {
+      bu: 'RLC',
+      count: 42,
+      color: '#005FC6',
+      text: 'Launched NuStar Mall and Mantawi Residences'
+    },
+    {
+      bu: 'URC',
+      count: 11,
+      color: '#BA0001'
+    },
       {
         bu: 'CEB',
         count: 10,
@@ -60,11 +61,11 @@ const config = {
         count: 22,
         color: '#005FC6'
       },
-      {
-        bu: 'URC',
-        count: 2,
-        color: '#BA0001'
-      },
+    {
+      bu: 'URC',
+      count: 2,
+      color: '#BA0001'
+    },
       {
         bu: 'CEB',
         count: 13,
@@ -128,7 +129,7 @@ function createTooltip(event, code) {
     }
   }
 }
-document.querySelectorAll('.dot').forEach(el => {
+document.querySelectorAll('.dot.ph').forEach(el => {
   el.addEventListener('click', evt => {
     document.querySelectorAll('.tooltip').forEach(el => {
       document.body.removeChild(el)
@@ -136,3 +137,4 @@ document.querySelectorAll('.dot').forEach(el => {
     createTooltip(evt, evt.currentTarget.id)
   })
 })
+)()

@@ -1,3 +1,4 @@
+(
 const config = {
   'ph': {
     name: 'Philippines',
@@ -102,12 +103,12 @@ const config = {
   'vn': {
     name: 'Vietnam',
     data: [
-      {
-        bu: 'CEB',
-        count: 3,
-        color: '#EEAF00',
-        text: 'Began flights to Danang'
-      },
+    {
+      bu: 'CEB',
+      count: 3,
+      color: '#EEAF00',
+      text: 'Began flights to Danang'
+    },
       {
         bu: 'URC',
         count: 4,
@@ -118,11 +119,11 @@ const config = {
   'jp': {
     name: 'Japan',
     data: [
-      {
-        bu: 'CEB',
-        count: 5,
-        color: '#EEAF00'
-      },
+    {
+      bu: 'CEB',
+      count: 5,
+      color: '#EEAF00'
+    },
     ]
   },
   'sk': {
@@ -138,11 +139,11 @@ const config = {
   'mc': {
     name: 'Macau',
     data: [
-      {
-        bu: 'CEB',
-        count: 1,
-        color: '#EEAF00'
-      },
+    {
+      bu: 'CEB',
+      count: 1,
+      color: '#EEAF00'
+    },
     ]
   },
   'sg': {
@@ -198,11 +199,11 @@ const config = {
         count: 2,
         color: '#EEAF00'
       },
-      {
-        bu: 'URC',
-        count: 1,
-        color: '#BA0001'
-      },
+    {
+      bu: 'URC',
+      count: 1,
+      color: '#BA0001'
+    },
     ]
   },
   'mm': {
@@ -218,11 +219,11 @@ const config = {
   'la': {
     name: 'Laos',
     data: [
-      {
-        bu: 'URC',
-        count: 2,
-        color: '#BA0001'
-      },
+    {
+      bu: 'URC',
+      count: 2,
+      color: '#BA0001'
+    },
     ]
   },
   'kh': {
@@ -273,8 +274,8 @@ function createTooltip(event, code) {
   if(window.matchMedia("(max-width: 768px)").matches) {
     const svgBox = document.querySelector('svg').getBoundingClientRect()
     tooltip.style.left = `${window.pageXOffset + 32}px`;
-    tooltip.style.top = `${svgBox.top + document.documentElement.scrollTop +
-        svgBox.height - tooltipdimensions.height - 16}px`;
+      tooltip.style.top = `${svgBox.top + document.documentElement.scrollTop +
+          svgBox.height - tooltipdimensions.height - 16}px`;
   } else {
     tooltip.style.left = `${rect.left + window.pageXOffset + 14}px`;
     tooltip.style.top = `${rect.top + window.pageYOffset + 14}px`;
@@ -289,7 +290,7 @@ function createTooltip(event, code) {
     }
   }
 }
-document.querySelectorAll('.dot').forEach(el => {
+document.querySelectorAll('.dot.world').forEach(el => {
   el.addEventListener('click', evt => {
     document.querySelectorAll('.tooltip').forEach(el => {
       document.body.removeChild(el)
@@ -298,3 +299,4 @@ document.querySelectorAll('.dot').forEach(el => {
     createTooltip(evt, message)
   })
 })
+)()
