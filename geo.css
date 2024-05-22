@@ -1,0 +1,72 @@
+@media(max-width: 768px) {
+  .wrapper {
+    height: 800px;
+    width: 100%;
+    overflow: scroll;
+  }
+  .wrapper svg {
+    height: 100%;
+    width: auto;
+  }
+}
+.tooltip:before {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  content: '';
+  background-color: #F3FEFC;
+  top: -12px;
+  left: -12px;
+  border-radius: 50%;
+}
+.tooltip {
+  position: absolute;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #F3FEFC;
+  color: #3C949A;
+}
+.tooltip-title {
+  font-family: 'Rethink Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+  margin: 0;
+}
+.tooltip ul:not(.nested) {
+  font-family: 'Rethink Sans', sans-serif;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.tooltip .nested {
+  list-style-type: disc;
+  margin: 0;
+  padding: 8px 16px;
+  max-width: 25ch;
+}
+.tooltip .row {
+  min-height: 24px;
+  position: relative;
+  margin-left: 32px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.tooltip .row:before {
+  position: absolute;
+  left: -32px;
+  content: attr(data-count);
+  background: var(--bg);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: inherit;
+  font-size: 10px;
+}
