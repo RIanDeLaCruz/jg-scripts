@@ -1,13 +1,5 @@
-@media(max-width: 768px) {
-  .wrapper {
-    height: 800px;
-    width: 100%;
-    overflow: scroll;
-  }
-  .wrapper svg {
-    height: 100%;
-    width: auto;
-  }
+.wrapper svg {
+  width: 100%;
 }
 .tooltip:before {
   width: 12px;
@@ -69,4 +61,15 @@
   color: white;
   font-family: inherit;
   font-size: 10px;
+}
+@media(max-width: 768px) {
+  .wrapper {
+    height: 800px;
+    width: 100%;
+    overflow: scroll;
+  }
+  .wrapper svg {
+    height: 100%;
+    width: auto;
+  }
 }
