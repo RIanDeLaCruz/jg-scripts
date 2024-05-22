@@ -1,4 +1,4 @@
-(
+(function insertSVG() {
   const svg = `
         <svg viewBox="0 0 1442 1158" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="1439" height="1156" transform="translate(1 1)" fill="#3C949A"/>
@@ -119,4 +119,4 @@
         </svg>
   `
 document.querySelector('#phGeo').innerHTML = svg
-)()
+}())
