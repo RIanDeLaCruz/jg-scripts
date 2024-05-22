@@ -282,7 +282,7 @@
     }
 
     // Remove the tooltip on click outside
-    document.querySelector('svg').addEventListener('click', removeTooltip);
+    document.body.addEventListener('click', removeTooltip);
 
     function removeTooltip(evt) {
       if(!evt.target.classList.contains('dot')) {
