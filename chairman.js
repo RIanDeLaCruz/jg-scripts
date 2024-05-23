@@ -20,7 +20,9 @@ let gdp = new Chart(document.querySelector('#gdp'), {
           '#90C8D8',
           '#90C8D8'
         ],
-        color: 'white',
+        datalabels: {
+          color: '#FFF6F8',
+        },
         borderRadius: 8
       }
     ]
