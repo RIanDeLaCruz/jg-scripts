@@ -58,7 +58,7 @@ let fyRevenue = new Chart(document.querySelector('#fyr'), {
   plugins: [ChartDataLabels, topLabels],
   type: 'bar',
   data: {
-    labels: yearLabels,
+    labels: [ '2019', '2020', '2021', '2022', '2023' ],
     datasets: [
       {
         label: 'URC',
@@ -138,6 +138,12 @@ let fyRevenue = new Chart(document.querySelector('#fyr'), {
     ]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         grid: {
@@ -184,7 +190,7 @@ let coreNI = new Chart(document.querySelector('#coreNI'), {
   plugins: [ChartDataLabels, coreLabel],
   type: 'bar',
   data: {
-    labels: yearLabels,
+    labels: [ '2019', '2020', '2021', '2022', '2023' ],
     datasets: [
       {
         data: [ 25.3, 0.5, 3.5, 6.2, 19.6 ],
@@ -251,6 +257,12 @@ let coreNI = new Chart(document.querySelector('#coreNI'), {
     ],
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     animation: {
       onComplete: () => {
         delayed = true;
@@ -311,7 +323,7 @@ let cashDividends = new Chart(document.querySelector('#cashDividends'), {
   plugins: [ChartDataLabels],
   type: 'bar',
   data: {
-    labels: yearLabels,
+    labels: [ '2019', '2020', '2021', '2022', '2023' ],
     datasets: [{
       label: 'Cash Dividends',
       data: [ 0.37, 0.38, 0.38, 0.40, 0.40 ],
@@ -326,6 +338,12 @@ let cashDividends = new Chart(document.querySelector('#cashDividends'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         grid: {
@@ -369,7 +387,7 @@ let assets = new Chart(document.querySelector('#assets'), {
   plugins: [ChartDataLabels],
   type: 'bar',
   data: {
-    labels: yearLabels,
+    labels: [ '2019', '2020', '2021', '2022', '2023' ],
     datasets: [{
       label: 'Total Assets (in Php billion)',
       data: [ 928, 1000, 1024, 1073, 1113 ],
@@ -420,21 +438,27 @@ let currentRatio = new Chart(document.querySelector('#currentRatio'), {
   plugins: [ChartDataLabels],
   type: 'bar',
   data: {
-    labels: yearLabels,
+    labels: [ '2019', '2020', '2021', '2022', '2023' ],
     datasets: [{
       label: 'Total Assets (in Php billion)',
       data: [ 0.96, 1.02, 1.03, 0.98, 1.01 ],
       backgroundColor: [
-        '#90C8D8',
-        '#90C8D8',
-        '#90C8D8',
-        '#90C8D8',
+        '#2C64CF',
+        '#2C64CF',
+        '#2C64CF',
+        '#2C64CF',
         '#F3FEFC'
       ],
       borderRadius: 8
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         grid: {
@@ -471,7 +495,7 @@ let debtRatio = new Chart(document.querySelector('#debtRatio'), {
   plugins: [ChartDataLabels],
   type: 'bar',
   data: {
-    labels: yearLabels,
+    labels: [ '2019', '2020', '2021', '2022', '2023' ],
     datasets: [{
       label: 'Total Assets (in Php billion)',
       data: [ 0.67, 0.78, 0.68, 0.77, 0.68 ],
@@ -486,6 +510,12 @@ let debtRatio = new Chart(document.querySelector('#debtRatio'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         grid: {

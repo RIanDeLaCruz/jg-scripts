@@ -20,6 +20,7 @@ let gdp = new Chart(document.querySelector('#gdp'), {
           '#90C8D8',
           '#90C8D8'
         ],
+        color: 'white',
         borderRadius: 8
       }
     ]
@@ -113,6 +114,11 @@ let inflation = new Chart(document.querySelector('#inflation'), {
     ]
   },
   options: {
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     animation: {
       onComplete: () => {
         delayed = true;
@@ -216,6 +222,9 @@ let tourist = new Chart(document.querySelector('#tourist'), {
       }
     },
     plugins: {
+      legend: {
+        display: false
+      },
       tooltip: {
         titleColor: '#737B8E',
         titleFont: {
