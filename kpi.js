@@ -70,6 +70,12 @@ let urcRevenue = new Chart(document.querySelector('#urcRevenue'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         border: {
@@ -139,6 +145,12 @@ let rlcRevenue = new Chart(document.querySelector('#rlcRevenue'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         border: {
@@ -207,6 +219,12 @@ let cebRevenue = new Chart(document.querySelector('#cebRevenue'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         border: {
@@ -275,6 +293,12 @@ let jgsocRevenue = new Chart(document.querySelector('#jgsocRevenue'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         border: {
