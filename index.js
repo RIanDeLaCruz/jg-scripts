@@ -328,11 +328,11 @@ let cashDividends = new Chart(document.querySelector('#cashDividends'), {
       label: 'Cash Dividends',
       data: [ 0.37, 0.38, 0.38, 0.40, 0.40 ],
       backgroundColor: [
-        '#2C64CF',
-        '#2C64CF',
-        '#2C64CF',
-        '#2C64CF',
-        '#08358D'
+        '#EEF4FF',
+        '#EEF4FF',
+        '#EEF4FF',
+        '#EEF4FF',
+        '#9AB8F4'
       ],
       borderRadius: 8
     }]

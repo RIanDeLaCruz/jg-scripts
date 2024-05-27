@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <style>
+      .chart-container {
+        width: 100%;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://iandelacruz.me/jg-scripts/globals.js"></script>
+    <canvas id="meralco"></canvas>
+    <script>
+      let meralco = new Chart(document.querySelector('#meralco'), {
+        plugins: [ChartDataLabels],
+        type: 'bar',
+        data: {
+          labels: [ '2019', '2020', '2021', '2022', '2023' ],
+          datasets: [{
+            label: 'Cash Dividends',
+            data: [ 5.4, 5.0, 4.3, 5.1, 5.8 ],
+            backgroundColor: [
+              '#EEF4FF',
+              '#EEF4FF',
+              '#EEF4FF',
+              '#EEF4FF',
+              '#9AB8F4'
+            ],
+            borderRadius: 8
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 20
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                display: false
+              }
+            },
+            y: {
+              beginAtZero: true
+            }
+          },
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              offset: 8,
+              color: [
+                '#2C64CF',
+                '#2C64CF',
+                '#2C64CF',
+                '#2C64CF',
+                '#08358D'
+              ],
+              font: {
+                weight: 'bold',
+                size: 14
+              },
+              formatter: function (value, context) {
+                  return value; // Display the actual data value
+              }
+            }
+          }
+        }
+      })
+    </script>
+    <canvas id="singapore"></canvas>
+    <script>
+      let singapore = new Chart(document.querySelector('#singapore'), {
+        plugins: [ChartDataLabels],
+        type: 'bar',
+        data: {
+          labels: [ '2019', '2020', '2021', '2022', '2023' ],
+          datasets: [{
+            label: 'Cash Dividends',
+            data: [0.7, 0.8, 0.7, 0.7, 0.8],
+            backgroundColor: [
+              '#EEF4FF',
+              '#EEF4FF',
+              '#EEF4FF',
+              '#EEF4FF',
+              '#9AB8F4'
+            ],
+            borderRadius: 8
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 20
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                display: false
+              }
+            },
+            y: {
+              beginAtZero: true,
+              max: 0.45
+            }
+          },
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              offset: 8,
+              color: [
+                '#2C64CF',
+                '#2C64CF',
+                '#2C64CF',
+                '#2C64CF',
+                '#08358D'
+              ],
+              font: {
+                weight: 'bold',
+                size: 14
+              },
+              formatter: function (value, context) {
+                  return value; // Display the actual data value
+              }
+            }
+          }
+        }
+      })
+    </script>
+    <canvas id="pldt"></canvas>
+    <script>
+      let pldt = new Chart(document.querySelector('#pldt'), {
+        plugins: [ChartDataLabels],
+        type: 'bar',
+        data: {
+          labels: [ '2019', '2020', '2021', '2022', '2023' ],
+          datasets: [{
+            label: 'Cash Dividends',
+
+            data: [ 5.4, 5.0, 4.3, 5.1, 5.8 ],
+            backgroundColor: [
+              '#EEF4FF',
+              '#EEF4FF',
+              '#EEF4FF',
+              '#EEF4FF',
+              '#9AB8F4'
+            ],
+            borderRadius: 8
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 20
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                display: false
+              }
+            },
+            y: {
+              beginAtZero: true,
+              max: 0.45
+            }
+          },
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              offset: 8,
+              color: [
+                '#2C64CF',
+                '#2C64CF',
+                '#2C64CF',
+                '#2C64CF',
+                '#08358D'
+              ],
+              font: {
+                weight: 'bold',
+                size: 14
+              },
+              formatter: function (value, context) {
+                  return value; // Display the actual data value
+              }
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
