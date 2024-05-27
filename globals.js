@@ -1,15 +1,20 @@
 Chart.defaults.plugins.tooltip.backgroundColor = '#FFFFFF'
-Chart.defaults.plugins.tooltip.titleColor = '#000'
+Chart.defaults.plugins.tooltip.titleColor = '#737B8E'
 Chart.defaults.plugins.tooltip.bodyColor = '#000'
 Chart.defaults.plugins.tooltip.borderColor = '#90C8D8'
 Chart.defaults.plugins.tooltip.borderWidth = 1
 Chart.defaults.plugins.tooltip.titleFont.family = "'Rethink Sans', sans-serif"
+Chart.defaults.plugins.tooltip.bodyFont.family = "'Rethink Sans', sans-serif"
+Chart.defaults.plugins.tooltip.titleFont.size = 14
+Chart.defaults.plugins.tooltip.bodyFont.size = 16
+Chart.defaults.plugins.tooltip.titleFont.weight = 400
+Chart.defaults.plugins.tooltip.usePointStyle = true
 Chart.defaults.font.family = "'Rethink Sans', sans-serif"
 const ticks = {
-                  color: '#08358D',
-                  font: {
-                    weight: 'bold'
-                  }
+  color: '#08358D',
+  font: {
+    weight: 'bold'
+  }
 }
 const yearLabels = [ '2019', '2020', '2021', '2022', '2023' ]
 
