@@ -73,7 +73,9 @@ let urcRevenue = new Chart(document.querySelector('#urcRevenue'), {
     maintainAspectRatio: false,
     layout: {
       padding: {
-        top: 20
+        top: 32,
+        left: 0,
+        right: 0
       }
     },
     scales: {
@@ -367,6 +369,14 @@ let urcIncome = new Chart(document.querySelector('#urcIncome'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 32,
+        left: 0,
+        right: 0
+      }
+    },
     scales: {
       x: {
         border: {
@@ -435,6 +445,12 @@ let rlcIncome = new Chart(document.querySelector('#rlcIncome'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         border: {
@@ -503,6 +519,12 @@ let cebIncome = new Chart(document.querySelector('#cebIncome'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         border: {
@@ -570,6 +592,12 @@ let jgsocIncome = new Chart(document.querySelector('#jgsocIncome'), {
     }]
   },
   options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        top: 20
+      }
+    },
     scales: {
       x: {
         grid: {

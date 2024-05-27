@@ -1,4 +1,4 @@
-const yearLabels = [
+const countryLabels = [
   'Philippines', 'Vietnam', 'Indonesia',
   'Malaysia', 'Thailand', 'Singapore'
 ]
@@ -21,7 +21,7 @@ let gdp = new Chart(document.querySelector('#gdp'), {
           '#90C8D8'
         ],
         datalabels: {
-          color: '#FFF6F8',
+          color: '#EEF4FF',
         },
         borderRadius: 8
       }
@@ -93,10 +93,10 @@ let inflation = new Chart(document.querySelector('#inflation'), {
       {
         label: 'Overall Inflation',
         data: [ 9, 9, 8, 7, 6, 5, 5, 5, 6, 5, 4, 4 ],
-        backgroundColor: '#90C8D8',
-        borderColor: '#90C8D8',
+        backgroundColor: '#08358D',
+        borderColor: '#08358D',
         datalabels: {
-          color: '#90C8D8',
+          color: '#08358D',
         },
       },
       {
@@ -138,10 +138,12 @@ let inflation = new Chart(document.querySelector('#inflation'), {
         grid: {
           display: false,
         },
+        ticks: ticks
       },
       y: {
         min: 0,
-        max: 20
+        max: 20,
+        ticks: ticks
       }
     },
     responsive: true,
@@ -211,16 +213,34 @@ let tourist = new Chart(document.querySelector('#tourist'), {
         grid: {
           display: false
         },
-        stacked: true
+        stacked: true,
+        ticks: {
+          color: '#08358D',
+          font: {
+            weight: 'bold'
+          }
+        }
       },
       y: {
         beginAtZero: true,
-        max: 10
+        max: 10,
+        ticks: {
+          color: '#08358D',
+          font: {
+            weight: 'bold'
+          }
+        }
       },
       y1: {
         type: 'linear',
         display: true,
-        position: 'right'
+        position: 'right',
+        ticks: {
+          color: '#2DA574',
+          font: {
+            weight: 'bold'
+          }
+        }
       }
     },
     plugins: {

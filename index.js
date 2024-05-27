@@ -149,11 +149,13 @@ let fyRevenue = new Chart(document.querySelector('#fyr'), {
         grid: {
           display: false
         },
-        stacked: true
+        stacked: true,
+        ticks: ticks
       },
       y: {
         beginAtZero: true,
-        stacked: true
+        stacked: true,
+        ticks: ticks
       },
     },
     responsive: true,
@@ -280,11 +282,14 @@ let coreNI = new Chart(document.querySelector('#coreNI'), {
         grid: {
           display: false
         },
-        stacked: true
+        stacked: true,
+        ticks: ticks
       },
       y: {
         beginAtZero: true,
-        stacked: true
+        stacked: true,
+        ticks: ticks
+
       },
     },
     plugins: {
