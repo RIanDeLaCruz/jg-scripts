@@ -80,6 +80,8 @@
   background-color: #2C64CF;
   color: #F9FCFF;
 }
+.tooltip .rlc p { color: inherit; }
+.tooltip .ceb p { color: inherit; }
 .tooltip .ceb { background-color: #90E0D6; color: #1646A3; }
 .row span {
   color: var(--bg);
