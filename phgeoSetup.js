@@ -97,13 +97,13 @@
     tooltip.classList.add('tooltip'); // Add a CSS class for styling (optional)
     if(code == 'luz') {
       const rlcTooltip = `
-          <img src="/rlc.png" alt="" />
+          <img src="https://iandelacruz.me/jg-scripts/rlc.png" alt="" />
           <p>
             Launched <strong>Westin Manila Sonata Hotel</strong>, <strong>Le Pont</strong>, <strong>Haraya</strong>, <strong>Sierra Valley Gardens 4</strong>, <strong>Springdale Batangas</strong>, <strong>Calamba 2A</strong>, and <strong>1 workable facility</strong> in <strong>Cyberscape Omega</strong>
           </p>
       `
       const cebTooltip = `
-          <img src="/ceb.png" alt="" />
+          <img src="https://iandelacruz.me/jg-scripts/ceb.png" alt="" />
           <p><strong>Cebu Pacific</strong> restored flights to <strong>Laoag</strong>.</p>
       `
       const rlcDiv = document.createElement('div')
@@ -120,7 +120,7 @@
     }
     if(code == 'vis') {
       const rlcTooltip = `
-          <img src="/rlc.png" alt="" />
+          <img src="https://iandelacruz.me/jg-scripts/rlc.png" alt="" />
           <p>Launched <strong>NuStar Mall</strong> and <strong>Mantawi Residences</strong></p>
       `
       const rlcDiv = document.createElement('div')

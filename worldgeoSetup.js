@@ -260,7 +260,7 @@
     tooltip.classList.add('tooltip'); // Add a CSS class for styling (optional)
     if(code == 'vn') {
       const cebTooltip = `
-          <img src="/ceb.png" alt="" />
+          <img src="https://iandelacruz.me/jg-scripts/ceb.png" alt="" />
           <p><strong>Cebu Pacific</strong> began flights to <strong>Danang</strong>.</p>
       `
       const cebDiv = document.createElement('div')
