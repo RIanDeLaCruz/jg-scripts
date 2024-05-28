@@ -32,7 +32,7 @@ const topLabels = {
         return total+values
       }
       let sum = datasetArray.reduce(totalSum, 0)
-      ctx.font = 'bold 14px Arial'
+      ctx.font = 'bold 14px Rethink Sans'
       ctx.fillStyle = '#08358D'
       ctx.textAlign = 'center'
       ctx.fillText(
@@ -60,7 +60,7 @@ const coreLabel = {
         return total+values
       }
       let sum = datasetArray.reduce(totalSum, 0)
-      ctx.font = 'bold 14px Arial'
+      ctx.font = 'bold 14px Rethink Sans'
       ctx.fillStyle = '#08358D'
       ctx.textAlign = 'center'
       ctx.fillText(
