@@ -17,6 +17,9 @@
   background-color: #F3FEFC;
   color: #3C949A;
   font-family: 'Rethink Sans', sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 400px;
 }
 .tooltip-title {
   font-size: 20px;
@@ -66,7 +69,17 @@
   font-family: inherit;
   font-size: 10px;
 }
-.tooltip .rlc { background-color: #2C64CF; color: #F9FCFF; }
+.tooltip .textRow {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+.tooltip .textRow img { width: 100%; }
+.tooltip .rlc {
+  background-color: #2C64CF;
+  color: #F9FCFF;
+}
 .tooltip .ceb { background-color: #90E0D6; color: #1646A3; }
 .row span {
   color: var(--bg);

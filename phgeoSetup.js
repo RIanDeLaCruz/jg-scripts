@@ -4,29 +4,29 @@
       name: 'Philippines',
       data: [
         {
-          bu: 'RLC',
+          bu: 'Robinsons Land Corp.',
           count: 197,
           color: '#005FC6',
           text: "Launched Westin Manila Sonata Hotel, Le Pont, Haraya, Sierra Valley Gardens 4, Springdale Batangas, Calamba 2A, and 1 workable facility in Cyberscape Omega"
         },
         {
-          bu: 'URC',
+          bu: 'Universal Robina Corp.',
           count: 34,
           color: '#BA0001'
         },
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 12,
           color: '#EEAF00',
           text: 'Restarted flights to Laoag'
         },
         {
-          bu: 'JGSOC',
+          bu: 'JG Summit Olefins Corp.',
           count: 2,
           color: '#008638'
         },
         {
-          bu: 'JG Summit',
+          bu: 'JG Summit Holdings',
           count: 1,
           color: '#1CB0E3'
         },
@@ -35,19 +35,19 @@
     'vis': {
       name: 'Visayas',
       data: [
-      {
-        bu: 'RLC',
-        count: 42,
-        color: '#005FC6',
-        text: 'Launched NuStar Mall and Mantawi Residences'
-      },
-      {
-        bu: 'URC',
-        count: 11,
-        color: '#BA0001'
-      },
         {
-          bu: 'CEB',
+          bu: 'Robinsons Land Corp.',
+          count: 42,
+          color: '#005FC6',
+          text: 'Launched NuStar Mall and Mantawi Residences'
+        },
+        {
+          bu: 'Universal Robina Corp.',
+          count: 11,
+          color: '#BA0001'
+        },
+        {
+          bu: 'Cebu Air Inc.',
           count: 10,
           color: '#EEAF00'
         },
@@ -57,17 +57,17 @@
       name: 'Mindanao',
       data: [
         {
-          bu: 'RLC',
+          bu: 'Robinsons Land Corp.',
           count: 22,
           color: '#005FC6'
         },
-      {
-        bu: 'URC',
-        count: 2,
-        color: '#BA0001'
-      },
         {
-          bu: 'CEB',
+          bu: 'Universal Robina Corp.',
+          count: 2,
+          color: '#BA0001'
+        },
+        {
+          bu: 'Cebu Air Inc.',
           count: 13,
           color: '#EEAF00'
         },
@@ -97,27 +97,34 @@
     tooltip.classList.add('tooltip'); // Add a CSS class for styling (optional)
     if(code == 'luz') {
       const rlcTooltip = `
+          <img src="./rlc.png" alt="" />
           <p>
             Launched <strong>Westin Manila Sonata Hotel</strong>, <strong>Le Pont</strong>, <strong>Haraya</strong>, <strong>Sierra Valley Gardens 4</strong>, <strong>Springdale Batangas</strong>, <strong>Calamba 2A</strong>, and <strong>1 workable facility</strong> in <strong>Cyberscape Omega</strong>
           </p>
       `
       const cebTooltip = `
+          <img src="./ceb.png" alt="" />
           <p><strong>Cebu Pacific</strong> restored flights to <strong>Laoag</strong>.</p>
       `
       const rlcDiv = document.createElement('div')
+      rlcDiv.classList.add('textRow')
       rlcDiv.classList.add('rlc')
       rlcDiv.innerHTML = rlcTooltip
       tooltip.appendChild(rlcDiv)
 
       const cebDiv = document.createElement('div')
+      cebDiv.classList.add('textRow')
       cebDiv.classList.add('ceb')
       cebDiv.innerHTML = cebTooltip
       tooltip.appendChild(cebDiv)
     }
     if(code == 'vis') {
       const rlcTooltip = `
+          <img src="./rlc.png" alt="" />
+          <p>Launched <strong>NuStar Mall</strong> and <strong>Mantawi Residences</strong></p>
       `
       const rlcDiv = document.createElement('div')
+      rlcDiv.classList.add('textRow')
       rlcDiv.classList.add('rlc')
       rlcDiv.innerHTML = rlcTooltip
       tooltip.appendChild(rlcDiv)
