@@ -103,7 +103,6 @@ const htmlLegendPlugin = {
     const items = chart.options.plugins.legend.labels.generateLabels(chart);
 
     items.forEach(item => {
-      console.log(item)
       if(item.text) {
         const li = document.createElement('li');
         li.style.alignItems = 'center';
@@ -111,17 +110,6 @@ const htmlLegendPlugin = {
         li.style.display = 'flex';
         li.style.flexDirection = 'row';
         li.style.marginLeft = '10px';
-
-        li.onclick = () => {
-          const {type} = chart.config;
-          if (type === 'pie' || type === 'doughnut') {
-            // Pie and doughnut charts only have a single dataset and visibility is per item
-            chart.toggleDataVisibility(item.index);
-          } else {
-            chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
-          }
-          chart.update();
-        };
 
         // Color box
         const boxSpan = document.createElement('span');

@@ -9,11 +9,95 @@
         width: 100%;
         position: relative;
       }
+      .legend { font-family: 'Rethink Sans', sans-serif; font-size: 14px; }
+      .legend ul { display: flex; justify-content: space-around; }
+      .legend span { border-radius: 50%; }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="./globals.js"></script>
     <!--<script src="./index.js"></script>-->
+    <script>
+      const getOrCreateLegendList = (chart, id) => {
+        const legendContainer = document.getElementById(id);
+        let listContainer = legendContainer.querySelector('ul');
+
+        if (!listContainer) {
+          listContainer = document.createElement('ul');
+          listContainer.style.display = 'flex';
+          listContainer.style.flexDirection = 'row';
+          listContainer.style.margin = 0;
+          listContainer.style.padding = 0;
+
+          legendContainer.appendChild(listContainer);
+        }
+
+        return listContainer;
+      };
+
+      const htmlLegendPlugin = {
+        id: 'htmlLegend',
+        afterUpdate(chart, args, options) {
+          const ul = getOrCreateLegendList(chart, options.containerID);
+
+          // Remove old legend items
+          while (ul.firstChild) {
+            ul.firstChild.remove();
+          }
+
+          // Reuse the built-in legendItems generator
+          const items = chart.options.plugins.legend.labels.generateLabels(chart);
+
+          items.forEach(item => {
+            console.log(item)
+            if(item.text) {
+              const li = document.createElement('li');
+              li.style.alignItems = 'center';
+              li.style.cursor = 'pointer';
+              li.style.display = 'flex';
+              li.style.flexDirection = 'row';
+              li.style.marginLeft = '10px';
+
+              li.onclick = () => {
+                const {type} = chart.config;
+                if (type === 'pie' || type === 'doughnut') {
+                  // Pie and doughnut charts only have a single dataset and visibility is per item
+                  chart.toggleDataVisibility(item.index);
+                } else {
+                  chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                }
+                chart.update();
+              };
+
+              // Color box
+              const boxSpan = document.createElement('span');
+              boxSpan.style.background = item.fillStyle;
+              boxSpan.style.borderColor = item.strokeStyle;
+              boxSpan.style.borderWidth = item.lineWidth + 'px';
+              boxSpan.style.display = 'inline-block';
+              boxSpan.style.flexShrink = 0;
+              boxSpan.style.height = '20px';
+              boxSpan.style.marginRight = '10px';
+              boxSpan.style.width = '20px';
+
+              // Text
+              const textContainer = document.createElement('p');
+              textContainer.style.color = item.fontColor;
+              textContainer.style.margin = 0;
+              textContainer.style.padding = 0;
+              textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
+
+              const text = document.createTextNode(item.text);
+              textContainer.appendChild(text);
+
+              li.appendChild(boxSpan);
+              li.appendChild(textContainer);
+              ul.appendChild(li);
+            }
+          });
+        }
+      };
+    </script>
   </head>
   <body>
     <div class="chart-container" style="height: 400px">
@@ -133,7 +217,7 @@
                 align: 'end',
                 offset: -28,
                 font: {
-                  family: "'Rethink Sans', sans-serif"
+                  family: "'Rethink Sans', sans-serif",
                   weight: 'bold',
                   size: 14
                 },
@@ -154,12 +238,15 @@
       </script>
     </div>
     <div class="chart-container" style="height: 400px">
+      <div id="coreNILegend" class="legend">
+        <ul></ul>
+      </div>
       <canvas id="coreNI"></canvas>
       <script>
         let delayed = null
 
         let coreNI = new Chart(document.querySelector('#coreNI'), {
-          plugins: [ChartDataLabels, coreLabel],
+          plugins: [ChartDataLabels, coreLabel, htmlLegendPlugin],
           type: 'bar',
           data: {
             labels: [ '2019', '2020', '2021', '2022', '2023' ],
@@ -299,12 +386,22 @@
               },
             },
             plugins: {
+              htmlLegend: {
+                // ID of the container to put the legend in
+                containerID: 'coreNILegend',
+              },
               legend: {
+                display: false,
                 onClick: null,
                 labels: {
                   filter: item => item.text,
                   usePointStyle: true,
-                  boxWidth: 6
+                  boxWidth: 6,
+                  padding: 40
+                },
+                fullSize: true,
+                title: {
+                  padding: 40
                 }
               },
               datalabels: {
