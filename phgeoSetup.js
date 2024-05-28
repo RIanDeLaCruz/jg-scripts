@@ -3,17 +3,17 @@
     'luz': {
       name: 'Philippines',
       data: [
-      {
-        bu: 'RLC',
-        count: 197,
-        color: '#005FC6',
-        text: "Launched Westin Manila Sonata Hotel, Le Pont, Haraya, Sierra Valley Gardens 4, Springdale Batangas, Calamba 2A, and 1 workable facility in Cyberscape Omega"
-      },
-      {
-        bu: 'URC',
-        count: 34,
-        color: '#BA0001'
-      },
+        {
+          bu: 'RLC',
+          count: 197,
+          color: '#005FC6',
+          text: "Launched Westin Manila Sonata Hotel, Le Pont, Haraya, Sierra Valley Gardens 4, Springdale Batangas, Calamba 2A, and 1 workable facility in Cyberscape Omega"
+        },
+        {
+          bu: 'URC',
+          count: 34,
+          color: '#BA0001'
+        },
         {
           bu: 'CEB',
           count: 12,
@@ -25,11 +25,11 @@
           count: 2,
           color: '#008638'
         },
-      {
-        bu: 'JG Summit',
-        count: 1,
-        color: '#1CB0E3'
-      },
+        {
+          bu: 'JG Summit',
+          count: 1,
+          color: '#1CB0E3'
+        },
       ]
     },
     'vis': {
@@ -77,7 +77,6 @@
 
   function createTooltip(event, code) {
     let data = config[code]
-    console.log(data)
     // Create the tooltip element
     const tooltip = document.createElement('div');
     let title = document.createElement('p')
@@ -88,19 +87,41 @@
     for(let segment of data.data) {
       let row = document.createElement('li')
       row.classList.add('row')
-      if(segment.text) {
-        let str = `${segment.bu}<ul class="nested"><li>${segment.text}</li></ul>`
-        row.innerHTML = str
-      } else {
-        row.textContent = segment.bu
-      }
       row.dataset.count = segment.count
       row.setAttribute('style', `--bg: ${segment.color}`)
+      row.innerHTML = `<span>${segment.count}</span>${segment.bu}`
       rows.appendChild(row)
     }
     tooltip.appendChild(title)
     tooltip.appendChild(rows)
     tooltip.classList.add('tooltip'); // Add a CSS class for styling (optional)
+    if(code == 'luz') {
+      const rlcTooltip = `
+          <p>
+            Launched <strong>Westin Manila Sonata Hotel</strong>, <strong>Le Pont</strong>, <strong>Haraya</strong>, <strong>Sierra Valley Gardens 4</strong>, <strong>Springdale Batangas</strong>, <strong>Calamba 2A</strong>, and <strong>1 workable facility</strong> in <strong>Cyberscape Omega</strong>
+          </p>
+      `
+      const cebTooltip = `
+          <p><strong>Cebu Pacific</strong> restored flights to <strong>Laoag</strong>.</p>
+      `
+      const rlcDiv = document.createElement('div')
+      rlcDiv.classList.add('rlc')
+      rlcDiv.innerHTML = rlcTooltip
+      tooltip.appendChild(rlcDiv)
+
+      const cebDiv = document.createElement('div')
+      cebDiv.classList.add('ceb')
+      cebDiv.innerHTML = cebTooltip
+      tooltip.appendChild(cebDiv)
+    }
+    if(code == 'vis') {
+      const rlcTooltip = `
+      `
+      const rlcDiv = document.createElement('div')
+      rlcDiv.classList.add('rlc')
+      rlcDiv.innerHTML = rlcTooltip
+      tooltip.appendChild(rlcDiv)
+    }
 
     document.body.appendChild(tooltip);
     console.log(tooltip)
