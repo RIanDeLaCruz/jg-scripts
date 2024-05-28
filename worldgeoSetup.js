@@ -4,27 +4,27 @@
       name: 'Philippines',
       data: [
         {
-          bu: 'RLC',
+          bu: 'Robinsons Land Corp.',
           count: 261,
           color: '#005FC6'
         },
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 47,
           color: '#BA0001'
         },
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 35,
           color: '#EEAF00'
         },
         {
-          bu: 'JGSOC',
+          bu: 'JG Summit Olefins Corp.',
           count: 2,
           color: '#008638'
         },
         {
-          bu: 'JG Summit',
+          bu: 'JG Summit Holdings',
           count: 1,
           color: '#1CB0E3'
         },
@@ -34,12 +34,12 @@
       name: 'Malaysia',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 2,
           color: '#EEAF00'
         },
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 3,
           color: '#BA0001'
         },
@@ -49,12 +49,12 @@
       name: 'Thailand',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 1,
           color: '#EEAF00'
         },
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 6,
           color: '#BA0001'
         },
@@ -64,7 +64,7 @@
       name: 'Brunei',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 1,
           color: '#EEAF00'
         },
@@ -74,12 +74,12 @@
       name: 'China',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 6,
           color: '#EEAF00'
         },
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 2,
           color: '#BA0001'
         },
@@ -89,12 +89,12 @@
       name: 'Indonesia',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 2,
           color: '#EEAF00'
         },
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 2,
           color: '#BA0001'
         },
@@ -104,13 +104,13 @@
       name: 'Vietnam',
       data: [
       {
-        bu: 'CEB',
+        bu: 'Cebu Air Inc.',
         count: 3,
         color: '#EEAF00',
         text: 'Began flights to Danang'
       },
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 4,
           color: '#BA0001'
         },
@@ -120,7 +120,7 @@
       name: 'Japan',
       data: [
       {
-        bu: 'CEB',
+        bu: 'Cebu Air Inc.',
         count: 5,
         color: '#EEAF00'
       },
@@ -130,7 +130,7 @@
       name: 'South Korea',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 2,
           color: '#EEAF00'
         },
@@ -140,7 +140,7 @@
       name: 'Macau',
       data: [
       {
-        bu: 'CEB',
+        bu: 'Cebu Air Inc.',
         count: 1,
         color: '#EEAF00'
       },
@@ -150,12 +150,12 @@
       name: 'Singapore',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 1,
           color: '#EEAF00'
         },
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 1,
           color: '#BA0001'
         },
@@ -165,7 +165,7 @@
       name: 'Taiwan',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 1,
           color: '#EEAF00'
         },
@@ -175,7 +175,7 @@
       name: 'United Arab Emirates',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 1,
           color: '#EEAF00'
         },
@@ -185,7 +185,7 @@
       name: 'Australia',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 2,
           color: '#EEAF00'
         },
@@ -195,12 +195,12 @@
       name: 'Hong Kong',
       data: [
         {
-          bu: 'CEB',
+          bu: 'Cebu Air Inc.',
           count: 2,
           color: '#EEAF00'
         },
       {
-        bu: 'URC',
+        bu: 'Univeral Robina Corp.',
         count: 1,
         color: '#BA0001'
       },
@@ -210,7 +210,7 @@
       name: 'Myanmar',
       data: [
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 1,
           color: '#BA0001'
         },
@@ -220,7 +220,7 @@
       name: 'Laos',
       data: [
       {
-        bu: 'URC',
+        bu: 'Univeral Robina Corp.',
         count: 2,
         color: '#BA0001'
       },
@@ -230,7 +230,7 @@
       name: 'Cambodia',
       data: [
         {
-          bu: 'URC',
+          bu: 'Univeral Robina Corp.',
           count: 1,
           color: '#BA0001'
         },
@@ -250,19 +250,25 @@
     for(let segment of data.data) {
       let row = document.createElement('li')
       row.classList.add('row')
-      if(segment.text) {
-        let str = `${segment.bu}<ul class="nested"><li>${segment.text}</li></ul>`
-        row.innerHTML = str
-      } else {
-        row.textContent = segment.bu
-      }
       row.dataset.count = segment.count
       row.setAttribute('style', `--bg: ${segment.color}`)
+      row.innerHTML = `<span>${segment.count}</span>${segment.bu}`
       rows.appendChild(row)
     }
     tooltip.appendChild(title)
     tooltip.appendChild(rows)
     tooltip.classList.add('tooltip'); // Add a CSS class for styling (optional)
+    if(code == 'vn') {
+      const cebTooltip = `
+          <img src="./ceb.png" alt="" />
+          <p><strong>Cebu Pacific</strong> began flights to <strong>Danang</strong>.</p>
+      `
+      const cebDiv = document.createElement('div')
+      cebDiv.classList.add('textRow')
+      cebDiv.classList.add('ceb')
+      cebDiv.innerHTML = cebTooltip
+      tooltip.appendChild(cebDiv)
+    }
 
     document.body.appendChild(tooltip);
 
