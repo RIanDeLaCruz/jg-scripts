@@ -408,6 +408,14 @@
             },
             responsive: true,
             plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    let label = context.dataset.label || '';
+                    return `${label}: ${parseFloat(context.parsed.y).toFixed(2)}`
+                  }
+                }
+              },
               legend: {
                 display: false
               },
