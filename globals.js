@@ -66,7 +66,7 @@ const coreLabel = {
       ctx.fillText(
         sum.toFixed(1),
         x.getPixelForValue(datapointIndex),
-        chart.getDatasetMeta(6).data[datapointIndex].y - 8
+        40
       )
     })
   }

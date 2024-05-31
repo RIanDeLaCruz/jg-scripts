@@ -17,7 +17,6 @@ let gdp = new Chart(document.querySelector('#gdp'), {
           '#90C8D8',
           '#90C8D8',
           '#90C8D8',
-          '#90C8D8',
           '#90C8D8'
         ],
         datalabels: {
@@ -28,6 +27,11 @@ let gdp = new Chart(document.querySelector('#gdp'), {
     ]
   },
   options: {
+    layout: {
+      padding: {
+        top: 40
+      }
+    },
     indexAxis: 'y',
     scales: {
       x: {
