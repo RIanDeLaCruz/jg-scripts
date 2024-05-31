@@ -125,6 +125,14 @@
             },
             responsive: true,
             plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    let label = context.dataset.label || '';
+                    return `${label}: ${parseFloat(context.parsed.y).toFixed(1)}`
+                  }
+                }
+              },
               legend: {
                 onClick: null,
               },
@@ -137,7 +145,7 @@
                   size: 14
                 },
                 formatter: function (value, context) {
-                    return value; // Display the actual data value
+                    return parseFloat(value).toFixed(1); // Display the actual data value
                 },
                 display: function(context) {
                   if (window.matchMedia('(hover:hover)').matches) {
@@ -298,6 +306,14 @@
               },
             },
             plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    let label = context.dataset.label || '';
+                    return `${label}: ${parseFloat(context.parsed.y).toFixed(1)}`
+                  }
+                }
+              },
               legend: {
                 onClick: null,
                 labels: {
@@ -315,7 +331,7 @@
                   size: 14
                 },
                 formatter: function (value, context) {
-                    return value; // Display the actual data value
+                    return parseFloat(value).toFixed(1); // Display the actual data value
                 },
                 display: function(context) {
                   if (window.matchMedia('(hover:hover)').matches) {
@@ -383,6 +399,14 @@
             },
             responsive: true,
             plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    let label = context.dataset.label || '';
+                    return `${label}: ${parseFloat(context.parsed.y).toFixed(2)}`
+                  }
+                }
+              },
               legend: {
                 display: false
               },
@@ -409,7 +433,6 @@
           }
         })
       </script>
-    </div>
     </div>
     <div class="chart-container" style="height: 400px">
       <!--<canvas id="assets"></canvas>-->
