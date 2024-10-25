@@ -143,6 +143,9 @@
       tooltip.style.left = `${window.pageXOffset + 32}px`;
       tooltip.style.top = `${svgBox.top + document.documentElement.scrollTop +
           svgBox.height - tooltipdimensions.height - 16}px`;
+      console.log(svgBox.top)
+      console.log(document.documentElement.scrollTop)
+      console.log(svgBox.height)
     } else {
       tooltip.style.left = `${rect.left + window.pageXOffset + 14}px`;
       tooltip.style.top = `${rect.top + window.pageYOffset + 14}px`;
